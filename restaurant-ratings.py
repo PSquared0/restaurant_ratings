@@ -1,4 +1,5 @@
 
+import random
 
 ratings = {}
 
@@ -29,16 +30,34 @@ restaurant?"""))
     restaurant_info.write(specific_info)
     restaurant_info.close()
 
+# def update_random():
+#     restaurant_info = open("scores.txt")
+#     restaurants = []
+#     for line in restaurant_info:
+#         restaurants.append(line)
+#     restaurant_choice = random.choice(restaurants)
+#     split_choice = restaurant_choice.split(":")
+#     print "Your random restaurants is: " , split_choice[0], "which has a score of", split_choice[1]
+#     restaurant_info.close()
+#     restaurant_info = open("scores.txt", "w")
+#     for line in restaurant_info:
+#         if line == restaurant_choice:
+#             restaurant_info.
+
+
 
 while True:
     user_input = int(raw_input("""Please enter 1 to view all ratings, 
-2 to add a new restaurant rating, or 3 to quit.
+2 to add a new restaurant rating, 3 to randomly update a restaurant rating,
+or 4 to quit.
 """))
-    if user_input == 3:
+    if user_input == 4:
         break
     elif user_input == 1:
         ratings_sort()
     elif user_input == 2:
         user_score_restaurants()
+    elif user_input == 3:
+        update_random()
     else:
         print "Please enter valid input"
